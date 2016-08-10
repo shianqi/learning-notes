@@ -6,7 +6,7 @@
     * [嵌入代码与外部文件](#2.2)
     * [\<noscript\>元素](#2.3)
     
-<h2 id="1">JavaScript简介</h3>
+<h2 id="1">JavaScript简介</h2>
 
 <h3 id="1.1">JavaScript简史</h3>
 * Netscape公司的布兰登·艾奇（Brendan Eich），1995年开发LiveScript为了搭上被媒体超热的Java的热潮，改名为JavaScript。
