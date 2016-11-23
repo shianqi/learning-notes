@@ -1,0 +1,19 @@
+{
+  "name": "flexcss",
+  "version": "1.0.0",
+  "description": "flexCSS learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-server": "webpack-dev-server"
+  },
+  "author": "shianqi@imudges.com",
+  "license": "ISC",
+  "dependencies": {
+    "flex.css": "^1.1.6"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
