@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hello</title>
-<script src="https://unpkg.com/vue@next/dist/vue.js"></script>
+    <title>hello</title>
+    <script src="https://unpkg.com/vue@next/dist/vue.js"></script>
 </head>
 <body>
 
 <div id="app">
-  <p>{{ message }}</p>
-  <input type="text" v-model="message">
-  <ul>
-  	<li v-for="item in items">
-  		{{item.text}}
-  	</li>
-  </ul>
+    <p></p>
+    <input type="text" v-model="message">
+    <ul>
+        <li v-for="item in items">
+            {{item.text}}
+        </li>
+    </ul>
 </div>
 
 <div id="app2">
@@ -23,12 +23,26 @@
 </div>
 
 <div id="app3">
-	<p v-if="seen()">Now you see me!</p>
+    <p v-if="seen">Now you see me!{{seen()}}</p>
+    <button v-on:click="click()"></button>
 </div>
 
 <div id="app5">
-	<p>{{ message }}</p>
-  	<button v-on:click="reverseMessage">Reverse Message</button>
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+<div id="app6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+
+<div id="app7">
+    <ol>
+        <!-- Now we provide each todo-item with the todo object    -->
+        <!-- it's representing, so that its content can be dynamic -->
+        <todo-item v-for="item in groceryList" v-bind:todo2="item"></todo-item>
+    </ol>
 </div>
 
 </body>

@@ -20,9 +20,12 @@ var app2 = new Vue({
 var app3 = new Vue({
 	el:'#app3',
 	data:{
-		seen: function(){
-			return true;
-		}
+	    click: function(){
+
+        },
+		seen: function () {
+            return true;
+        }
 	}
 });
 
@@ -37,3 +40,25 @@ var app5 = new Vue({
     }
   }
 });
+
+var app6 = new Vue({
+    el: '#app6',
+    data: {
+        message: '2'
+    }
+});
+
+Vue.component('todo-item', {
+    props: ['todo2'],
+    template: '<li>{{ todo2.text }}</li>'
+})
+var app7 = new Vue({
+    el: '#app7',
+    data: {
+        groceryList: [
+            { text: 'Vegetables' },
+            { text: 'Cheese' },
+            { text: 'Whatever else humans are supposed to eat' }
+        ]
+    }
+})
