@@ -1,19 +1,19 @@
 # CSS3 flex 布局
 
 * container 属性
-    * [flex-direction](#1.1)
-    * [flex-wrap](#1.2)
-    * [flex-flow](#1.3)
-    * [justify-content](#1.4)
-    * [align-items](#1.5)
-    * [align-content](#1.6)
+    * [flex-direction](#1.1) ---------/* 主轴方向 */
+    * [flex-wrap](#1.2) --------------/* 主轴不能容纳如何换行 */
+    * [flex-flow](#1.3) --------------/* 缩写 <flex-direction>||<flex-wrap> */
+    * [justify-content](#1.4)---------/* Item 在主轴上的排列方式 */
+    * [align-items](#1.5)-------------/* 项目在主轴上如何对齐 */
+    * [align-content](#1.6)-----------/* 多根交叉轴线的对齐方式*/
 * item 属性
-    * [order](#2.1)
-    * [flex-grow](#2.2)
-    * [flex-shrink](#2.3)
-    * [flex-basis](#2.4)
-    * [flex](#2.5)
-    * [align-self](#2.6)
+    * [order](#2.1)-------------------/* 项目排列顺序，值小靠前 */
+    * [flex-grow](#2.2)---------------/* item 有剩余空间缩放比例，默认为0，不缩放 */
+    * [flex-shrink](#2.3)-------------/* item 空间不足时缩小比例，默认为1，该项目将缩小。 */
+    * [flex-basis](#2.4)--------------/* 在分配多余空间之前，项目占据的主轴空间 */
+    * [flex](#2.5)--------------------/* 前三项的缩写，默认为 0 1 auto */
+    * [align-self](#2.6)--------------/* 允许单个项目有与其他项目不一样的对齐方式 覆盖align-items */
     
 
 
@@ -49,38 +49,6 @@ Webkit内核的浏览器，必须加上-webkit前缀。
 ## 概念
 ![概念](./img/flex.png)
 
-## 语法
-
-在容器(<font color="#ffc300">container</font>)中的语法：
-```css
-/*flex container 容器*/
-.container{
-    display: -webkit-flex;              /* 定义flex布局，兼容webkit */
-    display: flex;                      /* 定义flex布局 */
-    
-    flex-direction: row;                /* 主轴方向 */
-    flex-wrap: wrap;                    /* 主轴为一行时如何换行 */
-    flex-flow: row wrap;                /* <flex-direction>||<flex-wrap> */
-    justify-content: space-between;     /* item 排列方式 */
-    align-items: flex-start;            /* item在交叉轴上如何对齐 */
-    align-content: flex-start;          /* 多根轴线的对齐方式 */
-}
-```
-在子模块(<font color="#ffc300">item</font>)中的语法：
-```css
-/*flex item*/
-.item{
-    order: 0;                           /* item顺序*/
-    
-    flex-grow:1;                        /* 按比例占据空间 */
-    flex-shrink: 1;                     /* 按比例缩小 */
-    flex-basis: 500px;                  /* 占据主轴的空间 */
-    /*flex: 0 1 auto;*/                 /* 上面三个属性的缩写 */
-    
-    align-self: flex-end;               /* 单个项目有与其他项目不一样的对齐方式 */
-}
-```
-
 ## container 属性
 <h3 id="1.1">flex-direction</h3>
 决定主轴的方向 ( 项目的排列方向 )
@@ -92,7 +60,7 @@ Webkit内核的浏览器，必须加上-webkit前缀。
 ```
 
 <h3 id="1.2">flex-wrap</h3>
-如果一条轴线排不下，如何换行
+主轴不能容纳如何换行
 ```
     nowrap（默认值）：    //不换行。
     wrap:                //换行，第一行在上方。
@@ -123,7 +91,7 @@ Webkit内核的浏览器，必须加上-webkit前缀。
     stretch（默认值）：   //如果项目未设置高度或设为auto，将占满整个容器的高度。
 ```
 
-<h3 id="1.6">justify-content</h3>
+<h3 id="1.6">align-content</h3>
 多根轴线的对齐方式，只有一根轴不起作用
 ```
     flex-start：         //与交叉轴的起点对齐。
